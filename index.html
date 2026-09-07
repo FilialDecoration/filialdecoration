@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>辻井Pの電気工事士完全攻略講座 | 経営者向けPR</title>
+    <style>
+        /* --- 基本スタイル定義 --- */
+        :root {
+            --primary-navy: #0F2537;
+            --secondary-blue: #1E4F7C;
+            --accent-gold: #E5A823;
+            --accent-gold-hover: #D09310;
+            --warning-red: #D93838;
+            --text-dark: #2A2A2A;
+            --text-muted: #555555;
+            --bg-light: #F4F7F9;
+            --white: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.7;
+            background-color: var(--white);
+        }
+
+        /* --- 共通パーツ --- */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 70px 0;
+        }
+
+        .section-headline {
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--primary-navy);
+            line-height: 1.4;
+        }
+
+        .highlight-red {
+            color: var(--warning-red);
+            font-weight: bold;
+        }
+
+        .highlight-bg {
+            background: linear-gradient(transparent 60%, #FFF100 60%);
+        }
+
+        /* CTAボタン (共通) */
+        .cta-button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .btn-cta {
+            display: inline-block;
+            background-color: var(--accent-gold);
+            color: var(--primary-navy);
+            font-size: 1.25rem;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 22px 35px;
+            border-radius: 50px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            width: 100%;
+            max-width: 750px;
+            border: 2px solid var(--white);
+        }
+
+        .btn-cta:hover {
+            background-color: var(--accent-gold-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        /* --- セクション1: FV --- */
+        #fv {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-blue) 100%);
+            color: var(--white);
+            padding: 60px 0 80px;
+        }
+
+        .fv-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .fv-image-placeholder {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 2px dashed rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
+            height: 380px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #ddd;
+            padding: 20px;
+        }
+
+        .fv-text .main-copy {
+            font-size: 1.8rem;
+            font-weight: bold;
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+
+        .fv-text .sub-copy {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 25px;
+        }
+
+        /* --- セクション2: 市場のファクト --- */
+        #fact {
+            background-color: var(--bg-light);
+        }
+
+        .fact-card {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 35px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+
+        .fact-stats-visual {
+            background-color: #EBF2F7;
+            border: 1px solid #D0DFE9;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+            font-weight: bold;
+            color: var(--secondary-blue);
+        }
+
+        .stat-number {
+            font-size: 2.2rem;
+            color: var(--warning-red);
+            font-weight: bold;
+        }
+
+        .executive-message {
+            background-color: #FFF3F3;
+            border-left: 5px solid var(--warning-red);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* --- セクション3: 経営者の苦悩 --- */
+        .dilemma-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .dilemma-card {
+            background-color: var(--white);
+            border: 1px solid #E0E0E0;
+            border-top: 4px solid var(--primary-navy);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .dilemma-card h3 {
+            font-size: 1.1rem;
+            color: var(--primary-navy);
+            margin-bottom: 10px;
+        }
+
+        /* --- セクション4: 解決策 --- */
+        #solution {
+            background-color: var(--bg-light);
+        }
+
+        .solution-feature {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .solution-feature h3 {
+            color: var(--secondary-blue);
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+
+        .admin-feature-box {
+            background-color: #E8F4FF;
+            border: 2px dashed var(--secondary-blue);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        /* --- セクション5: メリット --- */
+        .benefit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .benefit-card {
+            background-color: var(--white);
+            border: 1px solid #E0E0E0;
+            border-radius: 8px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .benefit-card h3 {
+            color: var(--primary-navy);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        /* --- セクション6: 開発者プロフィール --- */
+        #profile {
+            background-color: var(--bg-light);
+        }
+
+        .profile-flex {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 35px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .profile-img-placeholder {
+            width: 220px;
+            height: 220px;
+            background-color: #DDD;
+            border-radius: 8px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .profile-bio h3 {
+            font-size: 1.4rem;
+            color: var(--primary-navy);
+            margin-bottom: 5px;
+        }
+
+        .profile-title {
+            font-size: 0.95rem;
+            color: var(--secondary-blue);
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        /* --- セクション7: CTA --- */
+        #closing-cta {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, #051321 100%);
+            color: var(--white);
+            text-align: center;
+            border-top: 5px solid var(--accent-gold);
+        }
+
+        #closing-cta .section-headline {
+            color: var(--white);
+        }
+
+        .mockup-placeholder {
+            background-color: rgba(255,255,255,0.1);
+            border: 1px dashed rgba(255,255,255,0.3);
+            max-width: 400px;
+            margin: 25px auto;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: #CCC;
+        }
+
+        .cta-button-large {
+            font-size: 1.35rem;
+            padding: 25px 40px;
+        }
+
+        /* --- モバイル対応（レスポンシブ） --- */
+        @media (max-width: 768px) {
+            .fv-grid, .profile-flex {
+                grid-template-columns: 1fr;
+                flex-direction: column;
+            }
+
+            .profile-img-placeholder {
+                width: 100%;
+                height: 180px;
+            }
+
+            .section-headline {
+                font-size: 1.4rem;
+            }
+
+            .fv-text .main-copy {
+                font-size: 1.35rem;
+            }
+
+            .btn-cta {
+                font-size: 1rem;
+                padding: 18px 20px;
+            }
+            
+            .cta-button-large {
+                font-size: 1.05rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- セクション1：ファーストビュー（FV） -->
+    <section id="fv">
+        <div class="container">
+            <div class="fv-grid">
+                <div class="fv-image-placeholder">
+                    【画像素材位置】<br>
+                    頼りがいのある講師・辻井Pの腕組み写真<br>またはタブレットで学習する若手職人
+                </div>
+                <div class="fv-text">
+                    <h1 class="main-copy">
+                        「若手・未経験者が育たない……」と、<br>
+                        諦めていませんか？<br><br>
+                        現場を回しながら「最短・確実」に<br>
+                        1種・2種電気工事士を内製化する、<br>
+                        新時代の「職人eラーニング」の仕組み。
+                    </h1>
+                    <p class="sub-copy">
+                        働き方改革・2024年問題に完全対応。現場を止めることなく、スタッフが自発的に一発合格を目指せる「20年の指導実績」を凝縮したオンライン講座。
+                    </p>
+                </div>
+            </div>
+            
+            <div class="cta-button-container">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfA8SvQknrwVTEqSTLW_alGEZtE28z_R94MgSkx-RbwMQYJbg/viewform?usp=publish-editor" target="_blank" rel="noopener" class="btn-cta">
+                    👉 自社の職人育成力を測定する<br>「経営ニーズアンケート」に答える
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- セクション2：市場のファクト -->
+    <section id="fact" class="section-padding">
+        <div class="container">
+            <h2 class="section-headline">
+                知っていましたか？<br>
+                電気工事士は、すでに日本全体で<span class="highlight-red">「深刻な超過需要」</span>にあります。
+            </h2>
+
+            <div class="fact-card">
+                <p>
+                    経済産業省の調査データによると、高齢の第一種電気工事士の退職などにより、将来には第一種で<span class="stat-number">約2万人</span>、第二種でも深刻な不足が予測されています。
+                </p>
+                <div class="fact-stats-visual">
+                    【インフォグラフィック配置位置】<br>
+                    電気工事従事者の有効求人倍率：<span class="stat-number">3.4〜3.8倍</span>（全職種平均 約1.1〜1.2倍）
+                </div>
+                <p>
+                    厚生労働省の統計でも、有効求人倍率は高止まりしており、圧倒的な「超・売り手市場」が続いています。
+                </p>
+            </div>
+
+            <div class="executive-message">
+                <p><strong>【経営者へのメッセージ】</strong></p>
+                <p>
+                    この深刻なデータが意味することは、たった一つ。<br>
+                    <strong>「多くの中小電気工事会社が、自社で電気工事士を育てられていない」</strong>ということです。<br>
+                    逆に言えば、もしあなたが、入社したばかりの未経験者を「最短・確実」に有資格者へと育成する仕組みを手に入れれば、競合を大きく引き離し、今以上に売上と受注を無限に伸ばせる大チャンスが眠っています。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- セクション3：問題提起 -->
+    <section id="dilemma" class="section-padding">
+        <div class="container">
+            <h2 class="section-headline">
+                しかし、現場の教育は「昔ながらの方法」では通用しません。<br>
+                あなたは、こんな「育成のジレンマ」に頭を悩ませていませんか？
+            </h2>
+
+            <div class="dilemma-grid">
+                <div class="dilemma-card">
+                    <h3>ジレンマ①：働き方改革の壁</h3>
+                    <p>「仕事終わりに専門学校へ通って勉強してこい」とは言いにくい世の中になった（労務管理・コンプライアンスの厳格化）。</p>
+                </div>
+                <div class="dilemma-card">
+                    <h3>ジレンマ②：モチベーションの壁</h3>
+                    <p>日中の現場作業で体力を使い果たした社員は、帰宅後に自発的に分厚い参考書を開く本腰が入らない。</p>
+                </div>
+                <div class="dilemma-card">
+                    <h3>ジレンマ③：ロードマップの壁</h3>
+                    <p>「あとどれくらい過去問を解けば、何時間勉強すれば合格できるのか」の具体的な合格への基準が分からない。</p>
+                </div>
+                <div class="dilemma-card">
+                    <h3>ジレンマ④：指導者の不足</h3>
+                    <p>現場が忙しすぎて、ベテラン職人が後輩をマンツーマンで指導する時間が物理的に取れない。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- セクション4：解決策 -->
+    <section id="solution" class="section-padding">
+        <div class="container">
+            <h2 class="section-headline">
+                その悩みをすべて解決するのが、<br>
+                現場と並走する<span class="highlight-bg">「職人eラーニング」</span>です。
+            </h2>
+            <p style="text-align: center; margin-bottom: 30px;">
+                「オンラインで学べる辻井Pの電気工事士完全攻略講座」は、働きながら、最短・最小の労力で合格を掴むために開発されました。
+            </p>
+
+            <div class="solution-feature">
+                <h3>特徴①：【スマホで10分】現場の移動中や隙間時間に「働きながら」学べる</h3>
+                <p>重い参考書や通学は不要。スマホさえあれば、現場への移動中や休憩時間、自宅のちょっとした隙間時間で効率よくインプットが進みます。</p>
+            </div>
+
+            <div class="solution-feature">
+                <h3>特徴②：【合格運営側20年の実績】出題傾向をハックした「過去問の集中学習」</h3>
+                <p>電気工事士資格を運営する側として、20年以上の指導実績・500人以上の合格者を送り出してきた講師のノウハウをすべてデジタル化。初心者がつまずくポイントを完璧に排除した、無駄のない最短ロードマップを提供します。</p>
+            </div>
+
+            <div class="solution-feature">
+                <h3>特徴③：【インプット×アウトプット】自社の現場が「世界一の練習場」になる</h3>
+                <p>座学（eラーニング）で学んだ知識を、明日からの「実際の自社現場」で即座にアウトプット。現場がそのまま合格への最強の練習台になり、外部スクールに通うより何倍も早い成長サイクルが実現します。</p>
+            </div>
+
+            <div class="admin-feature-box">
+                <h4 style="color: var(--primary-navy); margin-bottom: 5px;">【さらに！経営者のための「進捗管理機能」】</h4>
+                <p>「本当に勉強しているのか？」という不安は不要です。管理画面から全スタッフの学習進捗率や模擬試験のスコアをシステム上で一目で把握可能。適切な声かけができるため、脱落者を出しません。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- セクション5：経営者メリット -->
+    <section id="benefit" class="section-padding">
+        <div class="container">
+            <h2 class="section-headline">
+                電気工事士の内製化は、<br>
+                貴社の「財務」と「採用」を劇的に変えます。
+            </h2>
+
+            <div class="benefit-grid">
+                <div class="benefit-card">
+                    <h3>外注費の大幅削減 ＆ 利益率向上</h3>
+                    <p>これまで外部に発注していた配線工事や設備工事を自社スタッフで内製化。中間マージンをカットし、受注単価と会社の利益率を飛躍的に高めます。</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>離職率低下 ＆ 定着率の大幅アップ</h3>
+                    <p>「この会社にいれば、確実に国家資格が取れてキャリアアップできる」という教育環境を整えることで、スタッフの帰属意識が高まり定着率が改善します。</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>新規事業や業態転換の足がかりに</h3>
+                    <p>空調・冷媒工事業への進出やITインフラとの掛け合わせなど、資格をテコにした新たな高収益ビジネスモデルへの挑戦が可能になります。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- セクション6：開発者紹介 -->
+    <section id="profile" class="section-padding">
+        <div class="container">
+            <h2 class="section-headline">開発者プロフィール</h2>
+            <div class="profile-flex">
+                <div class="profile-img-placeholder">
+                    【講師写真】<br>辻井 孝之 氏
+                </div>
+                <div class="profile-bio">
+                    <h3>辻井 孝之（つじいたかし）</h3>
+                    <p class="profile-title">電気＆ITインフラコンサルタント / フィリアルデコレーション代表 / ミーナ電気設備 運営</p>
+                    <p style="font-weight: bold; margin-bottom: 10px; color: var(--secondary-blue);">
+                        「私もかつては、電気が大嫌いで逃げ回っていました」
+                    </p>
+                    <p>
+                        32歳の時から約23年間、電気工事の職業訓練講師として教育の現場に立ち続け、これまでに500人以上の合格者を社会に送り出してきました。<br>
+                        私自身、学生時代は物理の電気分野で大きな挫折を味わい、徹底的に電気を避けてきた歴史があります。だからこそ、「何がわからないのか」「どこでアレルギーが出るのか」という未経験者の不安が、誰よりも痛いほど理解できます。<br>
+                        自らも現役で「ミーナ電気設備」を運営し現場に立ち続ける実務者として、単なるペーパーテスト対策ではなく、経営を強くする本物の技術指導をお届けします。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- セクション7：クロージングCTA -->
+    <section id="closing-cta" class="section-padding">
+        <div class="container">
+            <h2 class="section-headline">
+                まずは、貴社の「職人育成力」と<br>
+                「経営の伸び代」を客観的に測ってみませんか？
+            </h2>
+            <p style="max-width: 700px; margin: 0 auto;">
+                働き方改革のなかで、自社がどれだけ効果的に有資格者を育てられる環境にあるか。<br>
+                「はい」「いいえ」で直感的に答えられる、わずか15問のシンプルなアンケートです。<br>
+                資料請求や不要な営業電話への対応はありません。回答いただくことで、貴社のこれからの経営に必要なニーズが浮き彫りになります。
+            </p>
+
+            <div class="mockup-placeholder">
+                【スマホ画面モックアップ画像位置】<br>
+                「はい・いいえ」でサクサク答えられる画面イメージ
+            </div>
+
+            <div class="cta-button-container">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfA8SvQknrwVTEqSTLW_alGEZtE28z_R94MgSkx-RbwMQYJbg/viewform?usp=publish-editor" target="_blank" rel="noopener" class="btn-cta cta-button-large">
+                    👉 【経営者様向け】自社の課題がわかる<br>「職人育成＆会社運営実態アンケート」に回答する
+                </a>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
