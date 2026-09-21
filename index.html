@@ -102,17 +102,18 @@
             align-items: center;
         }
 
-        .fv-image-placeholder {
-            background-color: rgba(255, 255, 255, 0.1);
-            border: 2px dashed rgba(255, 255, 255, 0.3);
+        .fv-image-container {
             border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
             height: 380px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #ddd;
-            padding: 20px;
+        }
+
+        .fv-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         .fv-text .main-copy {
@@ -244,25 +245,27 @@
         .profile-flex {
             display: flex;
             gap: 30px;
-            align-items: flex-start;
+            align-items: center;
             background-color: var(--white);
             border-radius: 12px;
             padding: 35px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
 
-        .profile-img-placeholder {
+        .profile-img-container {
             width: 220px;
             height: 220px;
-            background-color: #DDD;
-            border-radius: 8px;
+            border-radius: 12px;
+            overflow: hidden;
             flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #666;
-            text-align: center;
-            padding: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .profile-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         .profile-bio h3 {
@@ -290,20 +293,66 @@
             color: var(--white);
         }
 
-        .mockup-placeholder {
-            background-color: rgba(255,255,255,0.1);
-            border: 1px dashed rgba(255,255,255,0.3);
-            max-width: 400px;
-            margin: 25px auto;
-            padding: 15px;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            color: #CCC;
-        }
-
         .cta-button-large {
             font-size: 1.35rem;
             padding: 25px 40px;
+        }
+
+        /* --- フッター --- */
+        #footer {
+            background-color: #0A1926;
+            color: #CCCCCC;
+            padding: 50px 0 30px;
+            font-size: 0.95rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-company-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--white);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 8px;
+            margin-bottom: 5px;
+        }
+
+        .footer-info-item {
+            display: flex;
+            gap: 10px;
+        }
+
+        .footer-label {
+            width: 80px;
+            color: #8E9BAE;
+            flex-shrink: 0;
+        }
+
+        .footer-value a {
+            color: #CCCCCC;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-value a:hover {
+            color: var(--accent-gold);
+            text-decoration: underline;
+        }
+
+        .footer-copyright {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #667085;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         /* --- モバイル対応（レスポンシブ） --- */
@@ -311,11 +360,17 @@
             .fv-grid, .profile-flex {
                 grid-template-columns: 1fr;
                 flex-direction: column;
+                text-align: center;
             }
 
-            .profile-img-placeholder {
-                width: 100%;
+            .fv-image-container {
+                height: 260px;
+            }
+
+            .profile-img-container {
+                width: 180px;
                 height: 180px;
+                margin: 0 auto 20px;
             }
 
             .section-headline {
@@ -334,6 +389,16 @@
             .cta-button-large {
                 font-size: 1.05rem;
             }
+
+            .footer-info-item {
+                flex-direction: column;
+                gap: 2px;
+            }
+
+            .footer-label {
+                width: 100%;
+                font-size: 0.85rem;
+            }
         }
     </style>
 </head>
@@ -343,9 +408,8 @@
     <section id="fv">
         <div class="container">
             <div class="fv-grid">
-                <div class="fv-image-placeholder">
-                    【画像素材位置】<br>
-                    頼りがいのある講師・辻井Pの腕組み写真<br>またはタブレットで学習する若手職人
+                <div class="fv-image-container">
+                    <img src="https://lh3.googleusercontent.com/d/1zeYMVyZSX3Fvjwym9yt9uly8Q3gkMHm-" alt="講師・辻井孝之 氏">
                 </div>
                 <div class="fv-text">
                     <h1 class="main-copy">
@@ -362,7 +426,7 @@
             </div>
             
             <div class="cta-button-container">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfA8SvQknrwVTEqSTLW_alGEZtE28z_R94MgSkx-RbwMQYJbg/viewform?usp=publish-editor" target="_blank" rel="noopener" class="btn-cta">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfA8SvQknrwVTEqSTLW_alGEZtE28z_R94MgSkx-RbwMQYJbg/viewform" target="_blank" rel="noopener" class="btn-cta">
                     👉 自社の職人育成力を測定する<br>「経営ニーズアンケート」に答える
                 </a>
             </div>
@@ -493,8 +557,8 @@
         <div class="container">
             <h2 class="section-headline">開発者プロフィール</h2>
             <div class="profile-flex">
-                <div class="profile-img-placeholder">
-                    【講師写真】<br>辻井 孝之 氏
+                <div class="profile-img-container">
+                    <img src="https://lh3.googleusercontent.com/d/1zeYMVyZSX3Fvjwym9yt9uly8Q3gkMHm-" alt="辻井 孝之 氏">
                 </div>
                 <div class="profile-bio">
                     <h3>辻井 孝之（つじいたかし）</h3>
@@ -525,18 +589,41 @@
                 資料請求や不要な営業電話への対応はありません。回答いただくことで、貴社のこれからの経営に必要なニーズが浮き彫りになります。
             </p>
 
-            <div class="mockup-placeholder">
-                【スマホ画面モックアップ画像位置】<br>
-                「はい・いいえ」でサクサク答えられる画面イメージ
-            </div>
-
             <div class="cta-button-container">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfA8SvQknrwVTEqSTLW_alGEZtE28z_R94MgSkx-RbwMQYJbg/viewform?usp=publish-editor" target="_blank" rel="noopener" class="btn-cta cta-button-large">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfA8SvQknrwVTEqSTLW_alGEZtE28z_R94MgSkx-RbwMQYJbg/viewform" target="_blank" rel="noopener" class="btn-cta cta-button-large">
                     👉 【経営者様向け】自社の課題がわかる<br>「職人育成＆会社運営実態アンケート」に回答する
                 </a>
             </div>
         </div>
     </section>
+
+    <!-- フッター（企業情報） -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-company-name">FilialDecoration</div>
+                <div class="footer-info-item">
+                    <span class="footer-label">代表</span>
+                    <span class="footer-value">辻井 孝之</span>
+                </div>
+                <div class="footer-info-item">
+                    <span class="footer-label">住所</span>
+                    <span class="footer-value">〒603-8203 京都市北区紫竹東高縄町41-6 3F</span>
+                </div>
+                <div class="footer-info-item">
+                    <span class="footer-label">電話番号</span>
+                    <span class="footer-value"><a href="tel:08066094075">080-6609-4075</a></span>
+                </div>
+                <div class="footer-info-item">
+                    <span class="footer-label">メール</span>
+                    <span class="footer-value"><a href="mailto:filialdecoration@gmail.com">filialdecoration@gmail.com</a></span>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; FilialDecoration. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
