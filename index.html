@@ -98,21 +98,26 @@
         .fv-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 30px;
+            gap: 40px;
             align-items: center;
         }
 
+        /* 縦長長方形枠への変更（写真全体が綺麗に収まる設計） */
         .fv-image-container {
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-            height: 380px;
+            max-width: 360px;
+            width: 100%;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.15);
         }
 
         .fv-image-container img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
+            max-height: 520px;
+            object-fit: contain;
             display: block;
         }
 
@@ -252,27 +257,28 @@
 
         .profile-flex {
             display: flex;
-            gap: 30px;
-            align-items: center;
+            gap: 35px;
+            align-items: flex-start;
             background-color: var(--white);
             border-radius: 12px;
             padding: 35px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
 
+        /* プロフィール写真枠も縦長比率に調整 */
         .profile-img-container {
             width: 220px;
-            height: 220px;
             border-radius: 12px;
             overflow: hidden;
             flex-shrink: 0;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            background-color: #F0F4F8;
         }
 
         .profile-img-container img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
+            object-fit: contain;
             display: block;
         }
 
@@ -369,15 +375,15 @@
                 grid-template-columns: 1fr;
                 flex-direction: column;
                 text-align: center;
+                align-items: center;
             }
 
             .fv-image-container {
-                height: 260px;
+                max-width: 280px;
             }
 
             .profile-img-container {
-                width: 180px;
-                height: 180px;
+                width: 220px;
                 margin: 0 auto 20px;
             }
 
